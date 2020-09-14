@@ -24,7 +24,7 @@ $app->get('/prices', function (Request $request, Response $response, $args) {
         $stm->execute(array($row->id));
         $row->cycle = $stm->fetchAll();
     }
-    $response->getBody()->write(
+    $response->withStatus(200)->getBody()->write(
         json_encode($result, JSON_UNESCAPED_UNICODE)
     );
 
@@ -34,13 +34,16 @@ $app->get('/prices', function (Request $request, Response $response, $args) {
 $app->get('/prices/{id}', function (Request $request, Response $response, $args) {
     $database = new Database();
     $db = $database::StartUp();
+
     $stm = $db->prepare("SELECT * FROM products WHERE id = ?");
     $stm->execute(array($args['id']));
     $result = $stm->fetchObject();
+
     $stmC = $db->prepare("SELECT * FROM cycles WHERE product = ?");
     $stmC->execute(array($result->id));
     $result->cycle = $stmC->fetchAll();
-    $response->getBody()->write(
+
+    $response->withStatus(200)->getBody()->write(
         json_encode($result, JSON_UNESCAPED_UNICODE)
     );
 

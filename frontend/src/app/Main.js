@@ -56,6 +56,7 @@ function Main(props) {
                             <img alt="boy" src={window.location.href+"/assets/Grupo 29996.svg"} />
                         </Grid>
                     </Hidden>
+                    <img alt="seta" className="seta" src={window.location.href+"/assets/Grupo 29390.svg"} />
                 </Grid>
             </nav>
             <div>
