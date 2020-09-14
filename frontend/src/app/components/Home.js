@@ -80,6 +80,11 @@ export default function ComplexGrid() {
     setCycle(filtered);
   };
 
+  const getMoney = (value) => {
+      value = value || 0;
+      return value.toLocaleString('pt-br',{maximumFractionDigits: 2});
+  }
+
   React.useEffect(() => {
     fetch("http://localhost:8080/prices/6")
         .then(results => results.json())
@@ -146,25 +151,30 @@ export default function ComplexGrid() {
                     {product.name}
                 </div>
                 <div className="valorDe">
-                    <strike>R$ {cycle.price_renew}</strike> &nbsp;
-                    <strong>R$ {cycle.price_renew}</strong>
+                    <strike>R$ {getMoney(cycle.price_renew)}</strike> &nbsp;
+                    <strong>R$ {getMoney(cycle.price_renew * (0.6))}</strong>
                     <br/>
                     equivalente a
                 </div>
                 <div style={{width: '100%', padding: '20px'}}>
                     <span className="cifra">R$</span>
-                    <span className="valor">12,59</span>
+                    <span className="valor">{getMoney((cycle.price_renew * (0.6)) / cycle.months)}</span>
                     <span className="cifra">/mês</span>
                 </div>
                 <div style={{width: '100%', padding: '20px'}}>
-                    <CustomButton variant="contained" className="button">Contrate Agora</CustomButton>
+                    <CustomButton
+                        variant="contained"
+                        className="button"
+                        href={window.location.href+"?a=add&pid="+product.id+"&billingcycle="+cycle.type+"&promocode=PROMOHG40"}>
+                        Contrate Agora
+                    </CustomButton>
                 </div>
                 <div className="dominio">
                     1 ano de Domínio Grátis &nbsp;
                     <img alt="i" src={window.location.href+"/assets/Componente 5.svg"} />
                 </div>
                 <div className="economize">
-                    economize R$ 174,48 <span className="off">40% OFF</span>
+                    economize R$ {getMoney(cycle.price_renew - (cycle.price_renew * (0.6)))} <span className="off">40% OFF</span>
                 </div>
                 <div className="finalText">
                     Sites Ilimitados <br/>

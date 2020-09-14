@@ -27,10 +27,10 @@ function Main(props) {
                 <img style={{left: '20%', position: 'absolute', top: '5px'}} alt="logo" src={window.location.href+"/assets/hostgator-logo.svg"} />
             </div>
             <nav className="nav" aria-label="mailbox folders">
-                <Grid container spacing={3}>
-                    <Hidden  only={['xs', 'sm', 'md']}>
+                <Grid container spacing={0}>
+                    <Hidden only={['xs', 'sm', 'md']}>
                         <Grid item xs style={{marginTop: '100px'}}>
-                            <img src={window.location.href+"/assets/Grupo 29995.svg"} />
+                            <img alt="table" src={window.location.href+"/assets/Grupo 29995.svg"} />
                         </Grid>
                     </Hidden>
                     <Grid item xs style={{marginTop: '100px'}}>
@@ -40,20 +40,20 @@ function Main(props) {
                         <div className="titulo">
                             Tenha uma hospedagem de sites estável e evite perder visitantes diariamente
                         </div>
-                        <div className="checks">
-                            <img src={window.location.href+"/assets/icon-check.svg"} />
+                        <div className="checks" style={{marginTop: '50px'}}>
+                            <img alt="check1" src={window.location.href+"/assets/icon-check.svg"} />
                             &nbsp; 99,9% de disponibilidade: seu site sempre no ar
                         </div>
                         <div className="checks">
-                            <img src={window.location.href+"/assets/icon-check.svg"} />
+                            <img alt="check2" src={window.location.href+"/assets/icon-check.svg"} />
                             &nbsp; Suporte 24h, todos os dias &nbsp;
-                            <img src={window.location.href+"/assets/icon-check.svg"} />&nbsp;
+                            <img alt="check3" src={window.location.href+"/assets/icon-check.svg"} />&nbsp;
                             Painel de Controle cPanel
                         </div>
                     </Grid>
                     <Hidden only={['xs', 'sm', 'md']}>
                         <Grid item xs style={{marginTop: '100px'}}>
-                            <img src={window.location.href+"/assets/Grupo 29996.svg"} />
+                            <img alt="boy" src={window.location.href+"/assets/Grupo 29996.svg"} />
                         </Grid>
                     </Hidden>
                 </Grid>
