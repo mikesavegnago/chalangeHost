@@ -20,6 +20,7 @@ In your terminal execute this commands:
 <p>1 - Enter in backend folder, install and run the server</p>
 <p>$ cd backend</p>
 <p>$ composer install</p>
+<p>$ vendor/bin/phinx migrate -e development</p>
 <p>$ php -S localhost:8080 -t public</p>
 <p>Make sure that this server will be runnig when you start the frontend server</p>
 
