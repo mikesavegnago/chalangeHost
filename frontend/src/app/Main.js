@@ -29,18 +29,18 @@ function Main(props) {
             <nav className="nav" aria-label="mailbox folders">
                 <Grid container spacing={0}>
                     <Hidden only={['xs', 'sm', 'md']}>
-                        <Grid item xs style={{marginTop: '100px'}}>
+                        <Grid item xs style={{marginTop: '80px'}}>
                             <img alt="table" src={window.location.href+"/assets/Grupo 29995.svg"} />
                         </Grid>
                     </Hidden>
-                    <Grid item xs style={{marginTop: '100px'}}>
+                    <Grid item xs style={{marginTop: '80px'}}>
                         <div className="hospedagem">
                             Hospedagem de Sites
                         </div>
                         <div className="titulo">
                             Tenha uma hospedagem de sites estável e evite perder visitantes diariamente
                         </div>
-                        <div className="checks" style={{marginTop: '50px'}}>
+                        <div className="checks" style={{marginTop: '20px'}}>
                             <img alt="check1" src={window.location.href+"/assets/icon-check.svg"} />
                             &nbsp; 99,9% de disponibilidade: seu site sempre no ar
                         </div>
@@ -52,7 +52,7 @@ function Main(props) {
                         </div>
                     </Grid>
                     <Hidden only={['xs', 'sm', 'md']}>
-                        <Grid item xs style={{marginTop: '100px'}}>
+                        <Grid item xs style={{marginTop: '80px'}}>
                             <img alt="boy" src={window.location.href+"/assets/Grupo 29996.svg"} />
                         </Grid>
                     </Hidden>
